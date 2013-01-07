@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Nazhua]]></title>
-  <link href="http://nazhua.github.com/atom.xml" rel="self"/>
+  <title><![CDATA[Category: world | Nazhua]]></title>
+  <link href="http://nazhua.github.com/blog/categories/world/atom.xml" rel="self"/>
   <link href="http://nazhua.github.com/"/>
   <updated>2013-01-07T17:17:02+08:00</updated>
   <id>http://nazhua.github.com/</id>
@@ -22,7 +22,7 @@
 
 <h1>- Project[Mandatory]</h1>
 
-<p>The project you want to config the branch permission it&#8217;s mandatory.</p>
+<p>The project you want to config the branch permission it's mandatory.</p>
 
 <pre><code>e.g.: -Project 'ASR'
 </code></pre>
@@ -85,7 +85,7 @@
 <ul>
 <li>Make parameter project as mandatory</li>
 <li>Pattern parameter is allowed for Repository.</li>
-<li>Add the &#8220;Delete&#8221; permission function</li>
+<li>Add the "Delete" permission function</li>
 </ul>
 
 ]]></content>
