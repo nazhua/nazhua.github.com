@@ -1,0 +1,65 @@
+---
+layout: post
+title: "test"
+date: 2013-01-07 17:14
+comments: true
+categories: hello world
+author: nazhua
+---
+
+# Parameters to execute the script: 
+
+- Project[Mandatory]
+==================
+The project you want to config the branch permission it's mandatory.
+
+	e.g.: -Project 'ASR'
+- Repository
+==========
+The repository you want to config the branch permission, if -Repository is not provided, the permission config will be apply to all the repositories under the projects(defined by the -Project parameter)
+
+	e.g.: -Repository 'ASR'
+- Users
+=====
+The list of users you want to grant permission to. 
+	
+	e.g.: -Users @('jonny.xu','jed.li')
+- Groups
+======
+The list of email groups you want to grant permission to.
+
+	e.g.: -Groups @('ATeam', '42')
+- PermissionType
+==============
+There are two different permission type we can config for the branch
+
+	- BRANCH
+		The permission setting is based on branch, permission control can only apply to an existing branch.
+	- PATTERN
+		The permission setting is based on PATTERN, the pattern can be set anytime, as soon as the branch name matches the pattern, the permission will be applied on that branch.
+- PermissionValue
+===============
+The value should be provided correspondingly based on PermissionType
+	
+	e.g. 
+	- for BRANCH, -PermissionValue "master" (master branch)
+	- for PATTERN, -PermissionValue "release-*" (all the branches which match this pattern)
+
+- Delete
+======
+Boolean value, if the value is set to $true, the permission will be deleted from the users and groups
+
+# Examples: 
+
+Grant Teddy.Ma & Tristan.Guo the permission in Project __Main__ and all repositories which start with __school__ to update the __release__ branch:
+
+		.\BranchPermissions.ps1 -Project "Main" -Repository "school*" -Users @("Teddy.Ma","Tristan.Guo") -PermissionType "PATTERN" -PermissionValue "release/*"
+
+
+Updates:
+========
+2013-01-05: 
+
+- Make parameter project as mandatory
+- Pattern parameter is allowed for Repository.
+- Add the "Delete" permission function
